@@ -1,0 +1,109 @@
+<div [@routerTransition]>
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h1>{{ "Products" | localize }}</h1>
+          </div>
+          <div class="col-md-6 text-md-right text-center">
+            <button class="btn btn-primary" (click)="createOrEdit()">
+              <i class="fa fa-plus-square"></i> {{ "Create" | localize }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="content px-3">
+      <div class="container-fluid">
+        <div class="card">
+          <div class="card-header">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <span class="d-none d-md-inline-block">&nbsp;</span>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="keyword"
+                    [placeholder]="'SearchWithThreeDot' | localize"
+                    [(ngModel)]="keyword"
+                    (keyup.enter)="getDataPage(1)"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" (click)="getDataPage(1)">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover">
+                <thead class="bg-light">
+                  <tr>
+                    <th>{{ "Name" | localize }}</th>
+                    <th>{{ "Surname" | localize }}</th>
+                    <th>{{ "Email Address" | localize }}</th>
+                    <th style="width: 200px;">{{ "Actions" | localize }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let persons of person | paginate: { id: 'server', itemsPerPage: pageSize, currentPage: pageNumber, totalItems: totalItems }"
+                  >
+                    <td>{{ persons.name }}</td>
+                    <td>{{ persons.surname }}</td>
+                    <td>{{ persons.emailAddress }}</td>
+                    <td>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-secondary"
+                        (click)="createOrEdit(persons)"
+                      >
+                        <i class="fas fa-pencil-alt"></i> {{ "Edit" | localize }}
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-danger mx-2"
+                        (click)="delete(persons)"
+                      >
+                        <i class="fas fa-trash"></i> {{ "Delete" | localize }}
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+  
+          <div class="card-footer bg-light border-top">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center text-md-left">
+                <button class="btn btn-secondary" (click)="refresh()">
+                  <i class="fas fa-redo-alt"></i>
+                </button>
+              </div>
+              <div class="col-md-4 text-center">
+                <p class="mb-0">
+                  {{ "TotalRecordsCount" | localize: totalItems }}
+                </p>
+              </div>
+              <div class="col-md-4 text-center text-md-right">
+                <abp-pagination-controls
+                  id="server"
+                  (pageChange)="getDataPage($event)"
+                ></abp-pagination-controls>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  

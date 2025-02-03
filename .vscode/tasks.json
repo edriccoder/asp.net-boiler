@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "src/N.Web.Host",
+			"problemMatcher": [
+				"$lessc"
+			],
+			"label": "npm: start - src/N.Web.Host",
+			"detail": "ng serve --host 0.0.0.0 --port 4200"
+		}
+	]
+}

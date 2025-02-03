@@ -1,0 +1,98 @@
+<form
+  class="form-horizontal"
+  autocomplete="off"
+  #editPersonForm="ngForm"
+  (ngSubmit)="save()"
+>
+  <abp-modal-header
+    [title]="'Edit Person' | localize"
+    (onCloseClick)="bsModalRef.hide()"
+  ></abp-modal-header>
+  <div class="modal-body">
+    <tabset>
+      <tab [heading]="'Details' | localize" class="pt-3 px-2">
+        <div class="form-group row required">
+          <label class="col-md-3 col-form-label" for="name">
+            {{ "Name" | localize }}
+          </label>
+          <div class="col-md-9">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+              required
+              minlength="2"
+              maxlength="32"
+              [(ngModel)]="person.name"
+              #nameModel="ngModel"
+              #nameEl
+            />
+            <abp-validation-summary
+              [control]="nameModel"
+              [controlEl]="nameEl"
+            ></abp-validation-summary>
+          </div>
+        </div>
+        <div class="form-group row required">
+          <label class="col-md-3 col-form-label" for="surname">
+            {{ "Surname" | localize }}
+          </label>
+          <div class="col-md-9">
+            <input
+              type="text"
+              class="form-control"
+              name="surname"
+              id="surname"
+              required
+              minlength="2"
+              maxlength="32"
+              [(ngModel)]="person.surname"
+              #displayNameModel="ngModel"
+              #displayNameEl
+            />
+            <abp-validation-summary
+              [control]="displayNameModel"
+              [controlEl]="displayNameEl"
+            ></abp-validation-summary>
+          </div>
+        </div>
+        <div class="form-group row mb-0">
+          <label class="col-md-3 col-form-label" for="emailAddress">
+            {{ "Email Address" | localize }}
+          </label>
+          <div class="col-md-9">
+            <input
+              type="text"
+              class="form-control"
+              name="emailAddress"
+              id="emailAddress"
+              required="true"
+              [(ngModel)]="person.emailAddress"
+              #displayEmailMOdel="ngModel"
+              #displayModelEl
+              (ngModelChange)="validateEmail(displayEmailMOdel)"
+            />
+            <abp-validation-summary
+              [control]="displayEmailMOdel"
+              [controlEl]="displayModelEl"
+            ></abp-validation-summary>
+            <div 
+                *ngIf="displayEmailMOdel.invalid && (displayEmailMOdel.touched || displayEmailMOdel.dirty)"
+                class="text-danger"
+                >
+                <div *ngIf="displayEmailMOdel.errors?.invalidEmail">
+                    {{ "Invalid email address" | localize }}
+                </div>
+            </div>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+  <abp-modal-footer
+    [cancelDisabled]="saving"
+    [saveDisabled]="!editPersonForm.form.valid || saving"
+    (onCancelClick)="bsModalRef.hide()"
+  ></abp-modal-footer>
+</form>

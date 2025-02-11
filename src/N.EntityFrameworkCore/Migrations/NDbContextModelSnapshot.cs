@@ -31,7 +31,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -40,7 +40,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
@@ -51,7 +51,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -75,7 +75,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -142,7 +142,7 @@ namespace N.Migrations
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("ExecutionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int?>("ImpersonatorTenantId")
                         .HasColumnType("integer");
@@ -191,7 +191,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -238,7 +238,7 @@ namespace N.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -267,7 +267,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -276,7 +276,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("EmailAddress")
                         .HasMaxLength(256)
@@ -286,7 +286,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -335,7 +335,7 @@ namespace N.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -414,7 +414,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<byte>("Result")
                         .HasColumnType("smallint");
@@ -451,7 +451,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -486,7 +486,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -520,7 +520,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime?>("ExpireDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("LoginProvider")
                         .HasMaxLength(128)
@@ -558,7 +558,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -577,10 +577,10 @@ namespace N.Migrations
                         .HasColumnType("character varying(512)");
 
                     b.Property<DateTime?>("LastTryTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("NextTryTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<byte>("Priority")
                         .HasColumnType("smallint");
@@ -604,13 +604,13 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -761,7 +761,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("ChangeTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<byte>("ChangeType")
                         .HasColumnType("smallint");
@@ -810,7 +810,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("ExtensionData")
                         .HasColumnType("text");
@@ -894,7 +894,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -903,7 +903,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
@@ -921,7 +921,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -950,7 +950,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -966,7 +966,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -998,7 +998,7 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1059,7 +1059,7 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1106,7 +1106,7 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1156,7 +1156,7 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int>("State")
                         .HasColumnType("integer");
@@ -1195,7 +1195,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(95)");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1204,7 +1204,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("DisplayName")
                         .IsRequired()
@@ -1215,7 +1215,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -1244,7 +1244,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1277,13 +1277,13 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Data")
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
@@ -1307,10 +1307,10 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Response")
                         .HasColumnType("text");
@@ -1341,7 +1341,7 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1385,7 +1385,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1394,7 +1394,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
                         .HasMaxLength(5000)
@@ -1415,7 +1415,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -1467,7 +1467,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(128)");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1476,7 +1476,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("EmailAddress")
                         .IsRequired()
@@ -1506,13 +1506,13 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("LockoutEndDateUtc")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -1574,6 +1574,52 @@ namespace N.Migrations
                     b.ToTable("AbpUsers");
                 });
 
+            modelBuilder.Entity("N.Carts.CartItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("DeleterUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ExternalId")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("ProductCategoryId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductCategoryId");
+
+                    b.ToTable("CartItems");
+                });
+
             modelBuilder.Entity("N.MultiTenancy.Tenant", b =>
                 {
                     b.Property<int>("Id")
@@ -1587,7 +1633,7 @@ namespace N.Migrations
                         .HasColumnType("character varying(1024)");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1596,7 +1642,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<int?>("EditionId")
                         .HasColumnType("integer");
@@ -1608,7 +1654,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -1647,7 +1693,7 @@ namespace N.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1656,7 +1702,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("EmailAddress")
                         .HasMaxLength(255)
@@ -1666,7 +1712,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -1693,7 +1739,7 @@ namespace N.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
@@ -1702,7 +1748,7 @@ namespace N.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -1714,7 +1760,7 @@ namespace N.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
@@ -1943,6 +1989,17 @@ namespace N.Migrations
                     b.Navigation("DeleterUser");
 
                     b.Navigation("LastModifierUser");
+                });
+
+            modelBuilder.Entity("N.Carts.CartItem", b =>
+                {
+                    b.HasOne("N.Products.ProductCategory", "ProductCategory")
+                        .WithMany()
+                        .HasForeignKey("ProductCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProductCategory");
                 });
 
             modelBuilder.Entity("N.MultiTenancy.Tenant", b =>

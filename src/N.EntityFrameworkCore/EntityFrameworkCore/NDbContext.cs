@@ -7,6 +7,7 @@ using N.MultiTenancy;
 using N.Persons;
 using Abp.Localization;
 using System;
+using N.Carts;
 
 namespace N.EntityFrameworkCore
 {
@@ -15,6 +16,7 @@ namespace N.EntityFrameworkCore
         /* Define a DbSet for each entity of the application */
         
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
+        public virtual DbSet<CartItem> CartItem { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
         public NDbContext(DbContextOptions<NDbContext> options)
             : base(options)

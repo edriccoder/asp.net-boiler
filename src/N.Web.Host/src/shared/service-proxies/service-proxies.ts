@@ -2208,6 +2208,7 @@ export class UserServiceProxy {
 
 export class AddToCartDto implements IAddToCartDto {
     productCategoryId: string;
+    grantedPermissions: string[] | undefined;
 
     constructor(data?: IAddToCartDto) {
         if (data) {
@@ -2247,6 +2248,7 @@ export class AddToCartDto implements IAddToCartDto {
 
 export interface IAddToCartDto {
     productCategoryId: string;
+    
 }
 
 export class ApplicationInfoDto implements IApplicationInfoDto {
@@ -2424,6 +2426,7 @@ export class CartItemDto implements ICartItemDto {
     name: string | undefined;
     description: string | undefined;
     externalId: string | undefined;
+    grantedPermissions: string[] | undefined;
 
     constructor(data?: ICartItemDto) {
         if (data) {
@@ -2615,6 +2618,7 @@ export class CreateOrEditPersonDto implements ICreateOrEditPersonDto {
     name: string | undefined;
     surname: string | undefined;
     emailAddress: string | undefined;
+    grantedPermissions: string[] | undefined;
 
     constructor(data?: ICreateOrEditPersonDto) {
         if (data) {
@@ -2670,6 +2674,7 @@ export class CreateOrEditProductCategoryDto implements ICreateOrEditProductCateg
     name: string | undefined;
     description: string | undefined;
     externalId: string | undefined;
+    grantedPermissions: string[] | undefined;
 
     constructor(data?: ICreateOrEditProductCategoryDto) {
         if (data) {

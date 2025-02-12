@@ -9,9 +9,12 @@ import {
 import {
   ProductCategoryServiceProxy,
   CreateOrEditProductCategoryDto,
+  CartServiceProxy,
+  AddToCartDto,
 } from '@shared/service-proxies/service-proxies';
 import { CreateProductDialog } from './create-product/create-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { error } from 'console';
 
 class PagedProductRequestDto extends PagedRequestDto {
   keyword: string = '';
@@ -28,7 +31,8 @@ export class ProductComponent extends PagedListingComponentBase<CreateOrEditProd
   constructor(
     injector: Injector,
     private _productService: ProductCategoryServiceProxy,
-    private _modalService: BsModalService
+    private _modalService: BsModalService,
+    private _cartService: CartServiceProxy
   ) {
     super(injector);
   }
@@ -50,6 +54,21 @@ export class ProductComponent extends PagedListingComponentBase<CreateOrEditProd
         },
         error: (err) => abp.notify.error('Failed to load product categories'),
       });
+  }
+
+  addToCart(product: CreateOrEditProductCategoryDto): void {
+    let addToCartDto = new AddToCartDto();
+    addToCartDto.productCategoryId = product.id
+
+    this._cartService.addToCart(addToCartDto).subscribe({
+      next: result => {
+        abp.notify.success("Product added to cart successfully!");
+      },
+      error: (error) => {
+        abp.notify.error("Failed to add product to cart.");
+      }
+
+    });
   }
 
   delete(productCategory: CreateOrEditProductCategoryDto): void {

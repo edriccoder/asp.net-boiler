@@ -30,8 +30,7 @@
                   name="keyword"
                   [placeholder]="'SearchWithThreeDot' | localize"
                   [(ngModel)]="keyword"
-                  (keyup.enter)="getDataPage(1)"
-                />
+                  (keyup.enter)="getDataPage(1)" />
                 <div class="input-group-append">
                   <button class="btn btn-primary" (click)="getDataPage(1)">
                     <i class="fas fa-search"></i>
@@ -55,24 +54,27 @@
               </thead>
               <tbody>
                 <tr
-                  *ngFor="let product of productCategories | paginate: { id: 'server', itemsPerPage: pageSize, currentPage: pageNumber, totalItems: totalItems }"
-                >
+                  *ngFor="let product of productCategories | paginate: { id: 'server', itemsPerPage: pageSize, currentPage: pageNumber, totalItems: totalItems }">
                   <td>{{ product.name }}</td>
                   <td>{{ product.description }}</td>
                   <td>{{ product.externalId }}</td>
-                  <td>
+                  <td class="">
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-success"
+                      (click)="addToCart(product)">
+                      <i class="fas fa-shopping-cart"></i> {{"Add to Cart" | localize }}
+                    </button>
                     <button
                       type="button"
                       class="btn btn-sm btn-secondary"
-                      (click)="createOrEdit(product)"
-                    >
+                      (click)="createOrEdit(product)">
                       <i class="fas fa-pencil-alt"></i> {{ "Edit" | localize }}
                     </button>
                     <button
                       type="button"
                       class="btn btn-sm btn-danger mx-2"
-                      (click)="delete(product)"
-                    >
+                      (click)="delete(product)">
                       <i class="fas fa-trash"></i> {{ "Delete" | localize }}
                     </button>
                   </td>
@@ -97,8 +99,7 @@
             <div class="col-md-4 text-center text-md-right">
               <abp-pagination-controls
                 id="server"
-                (pageChange)="getDataPage($event)"
-              ></abp-pagination-controls>
+                (pageChange)="getDataPage($event)"></abp-pagination-controls>
             </div>
           </div>
         </div>
